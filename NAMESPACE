@@ -3,3 +3,4 @@
 export(collect.tbl_Snowflake)
 export(connect_snowflake)
 export(db_query_fields.Snowflake)
+export(sql_subquery.Snowflake)
