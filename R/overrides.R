@@ -27,13 +27,9 @@ db_query_fields.Snowflake <- function(con, sql, ...) {
 }
 
 #' @export
-sql_subquery.Snowflake <- function(con, from, name = "a", ...) {
-	dbplyr:::sql_subquery.DBIConnection(con, from, name, ...)
-}
-
-#' @export
 collect.tbl_Snowflake <- function(x, ...) {
 	data <- dbplyr:::collect.tbl_sql(x, ...)
+	options(dbplyr_table_num = 0)
 	colnames(data) <- tolower(colnames(data))
 	data
 }
